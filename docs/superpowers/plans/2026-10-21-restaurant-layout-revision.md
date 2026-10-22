@@ -16,4 +16,4 @@ Preserve existing natural images and local-only form behaviour. No new dependenc
 - [x] In `src/table/styles.css`, implement centred branding, a full-width hero, equal three-column menu groups and a two-column visit form; use one-column mobile layouts with wrapping controls.
 - [x] Check desktop and 390/320 px views in existing Chrome; exercise category/vegetarian filters, empty-state reset, mobile navigation and form validation.
 - [x] Run `npm run check` and `npm run build`; save new desktop/mobile screenshots and update `public/previews/table.png`.
-- [x] Record actual verification and commit the bounded change. Keep deployment status pending until GitHub login is restored.
+- [x] Record actual verification and commit the bounded change. Published through GitHub Pages on 22 October 2026 after GitHub login was restored.

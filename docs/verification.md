@@ -31,3 +31,11 @@ GitHub Pages deployment is verified separately after publication. This record do
 Re-reviewed Lilia and Published on Main in Chrome, then revised the layout to lead with restaurant photography. At 1512 px, the photo now begins near y=141 instead of y=477. The three menu groups each measure approximately 357 px wide. Repeated story/visit sections were consolidated.
 
 Verified category plus vegetarian filtering (2 matching main dishes), no-result search and reset (12 dishes), mobile navigation open/close with anchor navigation, and missing-name/date validation. Responsive checks at 390 px and 320 px show no document-level horizontal overflow; date/time input top positions match. Existing request persistence logic was retained. TypeScript and production build passed after the revision. Independent read-only visual review found the original three layout issues resolved in the supplied desktop screenshots.
+
+## Public deployment — 22 October 2026
+
+GitHub Actions run [39780142498](https://github.com/lizuoqiu/web-projects/actions/runs/39780142498) completed successfully for commit `16f5da80ed6a9a46796ecca44cb01c36620c584c`. Its Node 24 checks, 17 domain tests, production build, Pages configuration and deployment all passed. Public HTTPS requests returned 200 for the portfolio index and all three site entrypoints.
+
+The initial CI run exposed an outdated test assumption that Vancouver would return to UTC−8 in November 2026. The test now checks local 09:00 across timezone-data versions and retains explicit historical 2025 winter/summer UTC assertions. Production conversion logic was unchanged.
+
+Deployment: https://lizuoqiu.github.io/web-projects/

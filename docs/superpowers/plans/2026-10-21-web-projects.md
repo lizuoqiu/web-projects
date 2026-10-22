@@ -55,8 +55,8 @@ Files: README.md, ASSETS.md, docs/verification.md, local outputs portfolio copy.
 - [x] Start preview, inspect all pages at desktop and mobile sizes, exercise critical flows, fix observed problems.
 - [x] Record source references, asset licensing and precise tested coverage.
 - [x] Inspect tracked file list, initialize new repo with GitHub noreply author identity, commit only this directory.
-- [ ] Create public `lizuoqiu/web-projects`, push, configure Pages Actions and verify successful deployment and HTTP/browser routes.
-- [ ] Add actual project links and factual stack/feature descriptions to local portfolio materials. Deliver live URLs and source link.
+- [x] Create public `lizuoqiu/web-projects`, push, configure Pages Actions and verify successful deployment and HTTP/browser routes.
+- [x] Add actual project links and factual stack/feature descriptions to local portfolio materials. Deliver live URLs and source link.
 
 ## Plan review
 All approved scenarios map to Tasks 2–4; shared publication and copy to Tasks 1/5. Domain interfaces are isolated to avoid conflicting edits. No new features beyond the approved workflows. Browser owner is root; subagents do not operate shared Chrome.
