@@ -51,11 +51,20 @@ test('window uses Vancouver calendar dates, not UTC or the computer timezone', (
   assert.throws(() => reserve([], 'late', slotStart('2026-11-04', '09:00')), /no longer available/);
 });
 
-test('Pacific daylight saving change keeps a 9 AM appointment at local 9 AM', () => {
-  assert.equal(slotStart('2026-10-30', '09:00'), '2026-10-30T16:00:00.000Z');
-  assert.equal(slotStart('2026-11-02', '09:00'), '2026-11-02T17:00:00.000Z');
-  assert.equal(slotStart('2026-03-06', '09:00'), '2026-03-06T17:00:00.000Z');
-  assert.equal(slotStart('2026-03-09', '09:00'), '2026-03-09T16:00:00.000Z');
+test('Vancouver 9 AM stays at local 9 AM across historical DST and timezone-data revisions', () => {
+  const localTime = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Vancouver', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+  });
+  // B.C. stopped changing clocks in 2026; older runtimes still predict a November rollback.
+  // https://news.gov.bc.ca/releases/2026AG0013-000209
+  for (const date of ['2025-10-31', '2025-11-03', '2026-03-06', '2026-03-09', '2026-10-30', '2026-11-02']) {
+    const parts = Object.fromEntries(localTime.formatToParts(new Date(slotStart(date, '09:00'))).map(part => [part.type, part.value]));
+    assert.equal(`${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`, `${date} 09:00:00`);
+  }
+  // Stable historical offsets ensure a fixed-offset conversion cannot satisfy this test.
+  assert.equal(slotStart('2025-10-31', '09:00'), '2025-10-31T16:00:00.000Z');
+  assert.equal(slotStart('2025-11-03', '09:00'), '2025-11-03T17:00:00.000Z');
 });
 
 test('an overnight details draft returns to date selection without rendering an empty time', () => {
