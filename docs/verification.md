@@ -25,3 +25,9 @@ Desktop review used a 1512 px viewport. Responsive review used 390 px and 320 px
 These are static independent portfolio projects. Browser-local persistence is deliberate: no real payments, restaurant reservation submission, external calendar synchronisation, email delivery or shared multi-user availability is implemented. The UI communicates this at save/review points. Product and restaurant imagery is adapted from licensed photographic references; see `ASSETS.md`.
 
 GitHub Pages deployment is verified separately after publication. This record does not claim physical-device, production-backend, payment or comprehensive accessibility certification.
+
+## Restaurant layout revision — 22 October 2026
+
+Re-reviewed Lilia and Published on Main in Chrome, then revised the layout to lead with restaurant photography. At 1512 px, the photo now begins near y=141 instead of y=477. The three menu groups each measure approximately 357 px wide. Repeated story/visit sections were consolidated.
+
+Verified category plus vegetarian filtering (2 matching main dishes), no-result search and reset (12 dishes), mobile navigation open/close with anchor navigation, and missing-name/date validation. Responsive checks at 390 px and 320 px show no document-level horizontal overflow; date/time input top positions match. Existing request persistence logic was retained. TypeScript and production build passed after the revision. Independent read-only visual review found the original three layout issues resolved in the supplied desktop screenshots.
